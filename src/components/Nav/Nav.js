@@ -1,11 +1,18 @@
 import React, {Component} from 'react'
+import {withRouter} from 'react-router-dom'
 
-export default class Nav extends Component {
+export class Nav extends Component {
     render() {
         return(
             <div>
-                Nav
+                <button onClick={() => this.props.history.push('/home')}>Home</button>
+                <button onClick={() => this.props.history.push('/fleet')}>Fleet</button>
+                <button onClick={() => this.props.history.push('/econ')}>Econ</button>
+                <button onClick={() => this.props.history.push('/diplomacy')}>Diplomacy</button>
+                <button onClick={() => this.props.history.push('/')}>Logout</button>
             </div>
         )
     }
 }
+
+export default withRouter(Nav)
